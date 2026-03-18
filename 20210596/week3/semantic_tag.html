@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>시맨틱 태그 블로그 예제</title>
+    <style>
+        header { background-color: lightblue; border: 1px solid blue; padding: 10px; }
+        nav { background-color: lightgreen; border: 1px solid green; padding: 10px; }
+        main { background-color: lightyellow; border: 1px solid yellow; padding: 10px; }
+        section { background-color: lightcyan; border: 1px solid cyan; padding: 10px; margin: 10px 0; }
+        article { background-color: lightgray; border: 1px solid gray; padding: 10px; margin: 10px 0; }
+        aside { background-color: lightcoral; border: 1px solid coral; padding: 10px; }
+        footer { background-color: lightpink; border: 1px solid pink; padding: 10px; }
+        figure { background-color: lightgoldenrodyellow; border: 1px solid goldenrod; padding: 10px; }
+        figcaption { font-style: italic; }
+        mark { background-color: yellow; }
+        time { font-weight: bold; }
+        details { background-color: lightseagreen; border: 1px solid seagreen; padding: 10px; }
+        summary { cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>블로그 헤더</h1>
+        <p>사이트의 머리글 부분입니다.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#">홈</a></li>
+            <li><a href="#">기사</a></li>
+            <li><a href="#">연락처</a></li>
+        </ul>
+        <p>네비게이션 메뉴입니다.</p>
+    </nav>
+    
+    <main>
+        <section>
+            <h2>기사 섹션</h2>
+            <article>
+                <header>
+                    <h3>블로그 기사 제목</h3>
+                    <time datetime="2023-10-01">2023년 10월 1일</time>
+                </header>
+                <p>이 기사는 <mark>중요한 부분</mark>을 강조합니다. Lorem ipsum dolor sit amet.</p>
+                <figure>
+                    <img src="https://via.placeholder.com/200x100" alt="예시 이미지">
+                    <figcaption>기사에 포함된 이미지 설명입니다.</figcaption>
+                </figure>
+                <details>
+                    <summary>더 자세한 정보</summary>
+                    <p>추가 세부 사항이 여기에 있습니다.</p>
+                </details>
+            </article>
+        </section>
+        
+        <aside>
+            <h3>관련 링크</h3>
+            <ul>
+                <li><a href="#">관련 기사 1</a></li>
+                <li><a href="#">관련 기사 2</a></li>
+            </ul>
+            <p>사이드바 콘텐츠입니다.</p>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; 2023 블로그. 모든 권리 보유.</p>
+        <p>사이트의 바닥글입니다.</p>
+    </footer>
+</body>
+</html>
