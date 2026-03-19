@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 예제</title>
+    <style>
+        /* 태그 셀렉터: 모든 h1 태그에 적용 */
+        h1 {
+            color: #ff0000; /* 빨간색 헥스코드 */
+            background-color: rgb(255, 255, 255); /* 흰색 배경 rgb */
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.5;
+            letter-spacing: 2px;
+            text-decoration: underline;
+        }
+
+        /* 클래스 셀렉터: .intro 클래스를 가진 요소에 적용 */
+        .intro {
+            color: rgba(0, 128, 0, 0.8); /* 녹색 rgba (반투명) */
+            background-color: #f0f0f0; /* 연한 회색 배경 헥스코드 */
+            font-family: 'Times New Roman', serif;
+            font-size: 1.2em;
+            font-weight: normal;
+            font-style: italic;
+            text-align: left;
+            line-height: 1.8;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        /* ID 셀렉터: #main-title ID를 가진 요소에 적용 */
+        #main-title {
+            color: #0000ff; /* 파란색 헥스코드 */
+            background-color: rgb(255, 255, 0); /* 노란색 배경 rgb */
+            font-family: 'Courier New', monospace;
+            font-size: 1.5em;
+            font-weight: 600;
+            font-style: normal;
+            text-align: right;
+            line-height: 2;
+            letter-spacing: 0px;
+            text-decoration: overline;
+        }
+
+        /* 어트리뷰트 셀렉터: data-type="special" 어트리뷰트를 가진 요소에 적용 */
+        [data-type="special"] {
+            color: #800080; /* 보라색 헥스코드 */
+            background-color: rgba(255, 192, 203, 0.5); /* 핑크색 배경 rgba (반투명) */
+            font-family: Georgia, serif;
+            font-size: 1.1em;
+            font-weight: lighter;
+            font-style: oblique;
+            text-align: justify;
+            line-height: 1.6;
+            letter-spacing: 3px;
+            text-decoration: line-through;
+        }
+
+        /* 하위 선택자: .container 내부의 모든 p 태그에 적용 */
+        .container p {
+            color: #008080; /* 청록색 헥스코드 */
+            background-color: rgb(173, 216, 230); /* 연한 파란색 배경 rgb */
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.3em;
+            font-weight: 900;
+            font-style: normal;
+            text-align: center;
+            line-height: 1.4;
+            letter-spacing: -1px;
+            text-decoration: underline overline;
+        }
+
+        /* 자식 선택자: .container의 바로 아래 자식 span 태그에 적용 */
+        .container > span {
+            color: #ff4500; /* 주황색 헥스코드 */
+            background-color: rgba(255, 165, 0, 0.7); /* 주황색 배경 rgba (반투명) */
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 1.4em;
+            font-weight: 400;
+            font-style: italic;
+            text-align: left;
+            line-height: 1.7;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        /* 인접 형제 선택자: .sibling1 바로 다음에 오는 .sibling2에 적용 */
+        .sibling1 + .sibling2 {
+            color: #daa520; /* 황금색 헥스코드 */
+            background-color: rgb(255, 215, 0); /* 금색 배경 rgb */
+            font-family: 'Impact', sans-serif;
+            font-size: 1.6em;
+            font-weight: bold;
+            font-style: normal;
+            text-align: right;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            text-decoration: underline;
+        }
+
+        /* 일반 형제 선택자: .sibling1 이후의 모든 .sibling2에 적용 (여기서는 하나뿐이지만) */
+        .sibling1 ~ .sibling3 {
+            color: #8b0000; /* 어두운 빨간색 헥스코드 */
+            background-color: rgba(139, 69, 19, 0.6); /* 갈색 배경 rgba (반투명) */
+            font-family: 'Lucida Console', monospace;
+            font-size: 1.0em;
+            font-weight: 300;
+            font-style: italic;
+            text-align: center;
+            line-height: 2.0;
+            letter-spacing: 0px;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">CSS 기본 예제 제목</h1>
+    <p class="intro">이것은 소개 문단입니다. 다양한 CSS 셀렉터와 스타일을 보여줍니다.</p>
+    <div class="container">
+        <p>컨테이너 내부의 문단입니다. 하위 선택자로 스타일이 적용됩니다.</p>
+        <span>컨테이너의 자식 span입니다. 자식 선택자로 스타일이 적용됩니다.</span>
+    </div>
+    <p data-type="special">이 문단은 어트리뷰트 셀렉터로 스타일이 적용됩니다.</p>
+    <p class="sibling1">첫 번째 형제 문단입니다.</p>
+    <p class="sibling2">두 번째 형제 문단입니다. 인접 형제 선택자로 스타일이 적용됩니다.</p>
+    <p class="sibling3">세 번째 형제 문단입니다. 일반 형제 선택자로 스타일이 적용됩니다.</p>
+</body>
+</html>
