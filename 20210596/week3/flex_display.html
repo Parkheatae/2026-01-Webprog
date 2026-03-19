@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox 레이아웃 예제</title>
+    <style>
+        /* 공통 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .layout {
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav {
+            background-color: #2196F3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .content-area {
+            display: flex;
+            flex: 1;
+        }
+
+        .main {
+            flex: 3;
+            background-color: #ffffff;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+
+        .aside {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        /* Semantic 태그 버전도 동일한 스타일 적용 */
+        header, nav, main, aside, footer {
+            /* 위의 클래스 스타일과 동일하게 적용됨 */
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .comparison {
+            display: flex;
+            gap: 20px;
+        }
+
+        .comparison > div {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; margin: 20px 0;">Flexbox를 사용한 레이아웃 비교</h1>
+
+    <div class="comparison">
+        <!-- div만을 사용한 버전 -->
+        <div class="container">
+            <h2>div 태그만 사용한 버전</h2>
+            <div class="layout">
+                <div class="header">제목줄</div>
+                <div class="nav">이동메뉴</div>
+                <div class="content-area">
+                    <div class="main">
+                        <h3>문서</h3>
+                        <p>이곳은 메인 콘텐츠 영역입니다. Flexbox를 사용하여 레이아웃을 구성했습니다.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="aside">
+                        <h3>오른쪽 추가문서</h3>
+                        <p>이곳은 사이드바 영역입니다.</p>
+                        <ul>
+                            <li>추가 링크 1</li>
+                            <li>추가 링크 2</li>
+                            <li>추가 링크 3</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer">푸터</div>
+            </div>
+        </div>
+
+        <!-- Semantic 태그를 사용한 버전 -->
+        <div class="container">
+            <h2>Semantic 태그를 사용한 버전</h2>
+            <div class="layout">
+                <header>제목줄</header>
+                <nav>이동메뉴</nav>
+                <div class="content-area">
+                    <main>
+                        <h3>문서</h3>
+                        <p>이곳은 메인 콘텐츠 영역입니다. Flexbox를 사용하여 레이아웃을 구성했습니다.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </main>
+                    <aside>
+                        <h3>오른쪽 추가문서</h3>
+                        <p>이곳은 사이드바 영역입니다.</p>
+                        <ul>
+                            <li>추가 링크 1</li>
+                            <li>추가 링크 2</li>
+                            <li>추가 링크 3</li>
+                        </ul>
+                    </aside>
+                </div>
+                <footer>푸터</footer>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 20px; padding: 20px; background-color: #e8f5e8; border-radius: 5px;">
+        <h3>비교 설명</h3>
+        <p><strong>div 버전:</strong> 의미론적이지 않은 일반 div 태그만 사용하여 레이아웃을 구성했습니다.</p>
+        <p><strong>Semantic 버전:</strong> header, nav, main, aside, footer와 같은 의미론적 태그를 사용하여 코드의 가독성과 SEO, 접근성을 향상시켰습니다.</p>
+        <p>두 버전 모두 Flexbox를 사용하여 동일한 시각적 레이아웃을 구현했지만, Semantic 태그 버전이 더 의미 있고 유지보수하기 쉽습니다.</p>
+    </div>
+</body>
+</html>
