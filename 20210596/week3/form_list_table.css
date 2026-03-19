@@ -1,0 +1,150 @@
+/* form_list_table.css - CSS3 Transition과 Animation 예제 스타일 */
+
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.section {
+    margin: 30px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Transition 예제들 */
+
+/* 버튼 hover 시 색상과 크기 변화 - transition: color, transform */
+.button-transition {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* 배경색과 크기 변화를 0.3초 동안 ease 타이밍으로 */
+}
+
+.button-transition:hover {
+    background-color: #45a049; /* hover 시 더 어두운 녹색으로 변화 */
+    transform: scale(1.1); /* hover 시 10% 확대 */
+}
+
+/* 박스 hover 시 테두리와 그림자 변화 - transition: border, box-shadow */
+.box-transition {
+    width: 150px;
+    height: 150px;
+    background-color: #2196F3;
+    border: 3px solid #1976D2;
+    border-radius: 8px;
+    margin: 20px;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease; /* 테두리 색상과 그림자를 0.4초 동안 ease 타이밍으로 */
+}
+
+.box-transition:hover {
+    border-color: #0D47A1; /* hover 시 더 어두운 테두리 */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* hover 시 그림자 추가 */
+}
+
+/* 글자 hover 시 색상과 크기 변화 - transition: color, font-size */
+.text-transition {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.5s ease, font-size 0.5s ease; /* 색상과 글자 크기를 0.5초 동안 ease 타이밍으로 */
+}
+
+.text-transition:hover {
+    color: #FF5722; /* hover 시 주황색으로 변화 */
+    font-size: 28px; /* hover 시 글자 크기 증가 */
+}
+
+/* Animation 예제들 */
+
+/* 박스 회전 애니메이션 - @keyframes rotate-box */
+@keyframes rotate-box {
+    0% { transform: rotate(0deg); } /* 시작: 회전 없음 */
+    50% { transform: rotate(180deg); } /* 중간: 180도 회전 */
+    100% { transform: rotate(360deg); } /* 끝: 360도 회전 */
+}
+
+.box-animation {
+    width: 100px;
+    height: 100px;
+    background-color: #FF9800;
+    margin: 20px;
+    animation: rotate-box 2s infinite linear; /* rotate-box 애니메이션을 2초 동안 무한 반복, linear 타이밍 */
+}
+
+/* 글자 색상 변화 애니메이션 - @keyframes color-change */
+@keyframes color-change {
+    0% { color: #333; } /* 시작: 검은색 */
+    25% { color: #FF5722; } /* 25%: 주황색 */
+    50% { color: #2196F3; } /* 50%: 파란색 */
+    75% { color: #4CAF50; } /* 75%: 녹색 */
+    100% { color: #9C27B0; } /* 끝: 보라색 */
+}
+
+.text-animation {
+    font-size: 24px;
+    animation: color-change 3s infinite ease-in-out; /* color-change 애니메이션을 3초 동안 무한 반복, ease-in-out 타이밍 */
+}
+
+/* 버튼 pulsate 애니메이션 - @keyframes pulsate */
+@keyframes pulsate {
+    0% { transform: scale(1); opacity: 1; } /* 시작: 원래 크기, 불투명 */
+    50% { transform: scale(1.1); opacity: 0.7; } /* 중간: 확대, 반투명 */
+    100% { transform: scale(1); opacity: 1; } /* 끝: 원래 크기, 불투명 */
+}
+
+.button-animation {
+    background-color: #9C27B0;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    animation: pulsate 1.5s infinite ease-in-out; /* pulsate 애니메이션을 1.5초 동안 무한 반복, ease-in-out 타이밍 */
+}
+
+/* 박스 이동 애니메이션 - @keyframes slide */
+@keyframes slide {
+    0% { transform: translateX(0); } /* 시작: 원래 위치 */
+    50% { transform: translateX(100px); } /* 중간: 오른쪽으로 100px 이동 */
+    100% { transform: translateX(0); } /* 끝: 원래 위치로 돌아옴 */
+}
+
+.box-slide-animation {
+    width: 100px;
+    height: 100px;
+    background-color: #607D8B;
+    margin: 20px;
+    animation: slide 2s infinite ease-in-out; /* slide 애니메이션을 2초 동안 무한 반복, ease-in-out 타이밍 */
+}
+
+/* 설명 스타일 */
+.description {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 4px solid #4CAF50;
+    font-style: italic;
+}

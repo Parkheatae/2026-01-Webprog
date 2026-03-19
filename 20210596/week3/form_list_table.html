@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Transition과 Animation 예제</title>
+    <link rel="stylesheet" href="form_list_table.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSS3 Transition과 Animation 예제</h1>
+
+        <div class="section">
+            <h2>Transition 예제들</h2>
+            <p>Transition은 요소의 상태 변화 시 부드러운 애니메이션 효과를 줍니다.</p>
+
+            <div class="description">
+                <strong>버튼 Transition:</strong> hover 시 배경색과 크기가 0.3초 동안 ease 타이밍으로 변화
+            </div>
+            <button class="button-transition">Hover me!</button>
+
+            <div class="description">
+                <strong>박스 Transition:</strong> hover 시 테두리 색상과 그림자가 0.4초 동안 ease 타이밍으로 변화
+            </div>
+            <div class="box-transition"></div>
+
+            <div class="description">
+                <strong>글자 Transition:</strong> hover 시 색상과 글자 크기가 0.5초 동안 ease 타이밍으로 변화
+            </div>
+            <span class="text-transition">Hover this text!</span>
+        </div>
+
+        <div class="section">
+            <h2>Animation 예제들</h2>
+            <p>Animation은 @keyframes를 사용하여 복잡한 애니메이션 시퀀스를 정의합니다.</p>
+
+            <div class="description">
+                <strong>박스 회전 Animation:</strong> rotate-box 키프레임으로 2초 동안 무한 회전 (linear 타이밍)
+            </div>
+            <div class="box-animation"></div>
+
+            <div class="description">
+                <strong>글자 색상 변화 Animation:</strong> color-change 키프레임으로 3초 동안 색상 순환 (ease-in-out 타이밍)
+            </div>
+            <div class="text-animation">색상이 변하는 글자</div>
+
+            <div class="description">
+                <strong>버튼 Pulsate Animation:</strong> pulsate 키프레임으로 1.5초 동안 크기와 투명도 변화 (ease-in-out 타이밍)
+            </div>
+            <button class="button-animation">Pulsating Button</button>
+
+            <div class="description">
+                <strong>박스 이동 Animation:</strong> slide 키프레임으로 2초 동안 좌우 이동 (ease-in-out 타이밍)
+            </div>
+            <div class="box-slide-animation"></div>
+        </div>
+
+        <div class="section">
+            <h2>요약</h2>
+            <ul>
+                <li><strong>Transition:</strong> 상태 변화(주로 :hover) 시 자동으로 적용되는 간단한 애니메이션</li>
+                <li><strong>Animation:</strong> @keyframes로 세밀하게 제어되는 복잡한 애니메이션 시퀀스</li>
+                <li><strong>타이밍 함수:</strong> ease, linear, ease-in-out 등으로 애니메이션 속도 곡선 조절</li>
+                <li><strong>반복:</strong> infinite로 무한 반복, 또는 특정 횟수 지정 가능</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
