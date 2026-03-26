@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Basic Example</title>
+</head>
+<body>
+    <h1>배열 평균 및 60점 미만 필터</h1>
+    <div id="result"></div>
+    <script>
+        // 10개의 무작위 정수 생성 (0~100) - for 반복문 사용
+        const scores = [];
+        for (let i = 0; i < 10; i++) {
+            scores.push(Math.floor(Math.random() * 101));
+        }
+
+        // 합계 계산 - for 반복문 사용
+        let sum = 0;
+        for (let i = 0; i < scores.length; i++) {
+            sum += scores[i];
+        }
+        const average = sum / scores.length;
+
+        // 60점 미만 필터
+        const below60 = scores.filter(score => score < 60);
+
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `점수 배열: ${scores.join(', ')}<br>`;
+        resultDiv.innerHTML += `평균: ${average.toFixed(2)}<br>`;
+        resultDiv.innerHTML += `60점 미만 점수: ${below60.length > 0 ? below60.join(', ') : '없음'}`;
+    </script>
+</body>
+</html>

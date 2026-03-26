@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Object Example</title>
+</head>
+<body>
+    <h1>학생 정보 객체</h1>
+    <div id="result"></div>
+    <script>
+        const name = prompt("이름을 입력하세요:");
+        const studentId = prompt("학번을 입력하세요:");
+        const major = prompt("전공을 입력하세요:");
+
+        const student = {
+            name: name || "홍길동",
+            studentId: studentId || "20210001",
+            major: major || "컴퓨터공학",
+            introduce: function() {
+                return `안녕하세요. 저는 ${this.name} 입니다. 학번은 ${this.studentId}, 전공은 ${this.major} 입니다.`;
+            }
+        };
+
+        const introText = student.introduce();
+        document.getElementById('result').innerText = introText;
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Image Example</title>
+    <style>
+        img { width: 300px; height: auto; display: block; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>이미지 변경 예제</h1>
+    <img id="mainImage" src="https://via.placeholder.com/300x200?text=Original" alt="이미지">
+    <button id="changeBtn">이미지 바꾸기</button>
+
+    <script>
+        const imageUrls = [
+            'https://via.placeholder.com/300x200?text=First+Image',
+            'https://via.placeholder.com/300x200?text=Second+Image',
+            'https://via.placeholder.com/300x200?text=Third+Image'
+        ];
+
+        let currentIndex = 0;
+        const img = document.getElementById('mainImage');
+        const btn = document.getElementById('changeBtn');
+
+        btn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageUrls.length;
+            img.src = imageUrls[currentIndex];
+        });
+    </script>
+</body>
+</html>
