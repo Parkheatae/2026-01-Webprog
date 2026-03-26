@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Function Example</title>
+</head>
+<body>
+    <h1>함수 선언식과 화살표 함수 예제</h1>
+    <p id="result"></p>
+    <script>
+        // 함수 선언식
+        function addNumbers(a, b) {
+            return a + b;
+        }
+
+        // 화살표 함수
+        const addNumbersArrow = (a, b) => a + b;
+
+        const num1 = 7;
+        const num2 = 5;
+
+        const sum1 = addNumbers(num1, num2);
+        const sum2 = addNumbersArrow(num1, num2);
+
+        document.getElementById('result').innerText =
+            `함수 선언식: ${num1} + ${num2} = ${sum1}\n화살표 함수: ${num1} + ${num2} = ${sum2}`;
+
+        // alert로 결과 확인 (옵션)
+        alert(`함수 선언식 결과: ${sum1}`);
+        alert(`화살표 함수 결과: ${sum2}`);
+    </script>
+</body>
+</html>
