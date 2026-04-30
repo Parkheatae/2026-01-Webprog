@@ -168,4 +168,124 @@
 ---
 
 **작성자:** GitHub Copilot
-**마지막 수정:** 2026년 4월 29일
+**마지막 수정:** 2026년 4월 30일
+
+---
+
+## 📅 2026년 4월 30일 작업 내용
+
+### 3. Calc_MVC 프로젝트 (`3.Calc_MVC`)
+
+#### 목표: MVC 패턴을 적용한 계산기 웹 애플리케이션
+
+- **MVC 아키텍처 구현**
+  - **Model**: `Calculator.java` (POJO 클래스)
+  - **View**: `index.jsp` (입력 폼), `calcResult.jsp` (결과 표시)
+  - **Controller**: `CalcController.java` (서블릿 컨트롤러)
+
+#### 핵심 파일 구현
+
+##### **Calculator.java**
+- **필드**: `n1` (double), `n2` (double), `op` (String)
+- **메서드**: `calc()` - 사칙연산 수행 (+, -, *, /)
+- **JavaBean 규칙**: 기본 생성자, Getter/Setter 메서드
+
+##### **CalcController.java**
+- **@WebServlet("/calcControl")**: URL 매핑
+- **BeanUtils.populate()**: 요청 파라미터 자동 매핑
+- **계산 수행**: Calculator 객체 생성 및 계산
+- **Forwarding**: 결과를 `calcResult.jsp`로 전달
+
+##### **index.jsp**
+- **HTML 폼**: n1, n2 입력 필드 (실수 지원), 연산자 선택 드롭다운
+- **유효성 검사**: required 속성 적용
+- **스타일링**: CSS로 깔끔한 UI 구현
+
+##### **calcResult.jsp**
+- **결과 표시**: 계산 결과 및 입력값 상세 정보
+- **에러 처리**: 0으로 나누기 등 예외 상황 표시
+- **네비게이션**: "다시 계산하기" 버튼으로 index.jsp 복귀
+
+#### 의존성 추가 (pom.xml)
+```xml
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>commons-beanutils</groupId>
+    <artifactId>commons-beanutils</artifactId>
+    <version>1.9.4</version>
+</dependency>
+```
+
+#### 파일 구조
+```
+3.Calc_MVC/
+  └── calc_mvc/
+      ├── pom.xml (의존성 추가)
+      ├── src/main/java/
+      │   ├── Calculator.java
+      │   └── CalcController.java
+      └── src/main/webapp/
+          ├── index.jsp (계산기 입력 폼)
+          └── calcResult.jsp (계산 결과 표시)
+```
+
+---
+
+### 4. Product_MVC 프로젝트 (`4. Product_MVC`)
+
+#### 목표: 제품 관리 시스템의 기초 모델링
+
+- **Maven 웹 프로젝트 생성**: `artifactId`: `product`
+- **패키지 구조**: `kr.hnu.ice`
+
+#### 핵심 클래스 구현
+
+##### **Product.java**
+- **필드**: `id` (String), `name` (String), `maker` (String), `price` (int), `date` (String)
+- **생성자**: 기본 생성자 + 사용자 정의 생성자 (모든 필드)
+- **JavaBean 규칙**: 모든 필드의 Getter/Setter 메서드
+
+##### **ProductService.java**
+- **데이터 저장소**: `HashMap<String, Product> products`
+- **초기 데이터**: 기본 생성자에서 5개 휴대폰 제품 생성
+  - Galaxy S24 (Samsung)
+  - iPhone 15 (Apple)
+  - LG Velvet (LG)
+  - Xiaomi Mi 13 (Xiaomi)
+  - Google Pixel 8 (Google)
+- **메서드**:
+  - `List<Product> findAll()`: 모든 제품 리스트 반환
+  - `Product find(String id)`: ID로 특정 제품 검색
+
+#### 파일 구조
+```
+4. Product_MVC/
+  └── product/
+      ├── pom.xml
+      └── src/main/java/kr/hnu/ice/
+          ├── Product.java
+          └── ProductService.java
+```
+
+---
+
+## 🔧 다음 단계
+
+1. **Product_MVC 프로젝트 확장**
+   - ProductController 서블릿 생성
+   - 제품 목록 및 상세 조회 JSP 페이지 구현
+   - MVC 패턴 완성
+
+2. **웹 애플리케이션 통합**
+   - 두 프로젝트의 배포 및 테스트
+   - MVC 패턴의 장점 체득
+
+---
+
+**작성자:** GitHub Copilot
+**마지막 수정:** 2026년 4월 30일
