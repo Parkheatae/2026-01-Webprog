@@ -25,3 +25,7 @@
 13. `/myf`와 `/newf`에 모두 Filter를 적용하기 위해 `/*` 패턴을 사용할 경우 모든 요청에 Filter가 적용되는 문제가 있다.
 14. 따라서 필요한 서블릿에만 적용되도록 `@WebFilter(urlPatterns = {"/myf", "/newf"})` 형식으로 수정하는 것이 적절하다.
 15. 이번 실습을 통해 공통 기능을 Filter로 분리하면 코드 중복을 줄이고 유지보수가 쉬워진다는 점을 이해하였다.
+
+## 추가 작업
+- `week10\Product_MVC\productmvc` 프로젝트를 `week13\Product_Rest`로 복사하고 관련 메타 정보를 업데이트함
+- 복사된 프로젝트의 Maven `artifactId`, `finalName`, 패키지 이름, UI 이름 및 servlet 설정을 `Product_Rest`에 맞게 변경함
