@@ -7,6 +7,9 @@ public class Product {
     private int price;
     private String date;
 
+    public Product() {
+    }
+
     public Product(String id, String name, String maker, int price, String date) {
         this.id = id;
         this.name = name;
@@ -33,5 +36,25 @@ public class Product {
 
     public String getDate() {
         return date;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setMaker(String maker) {
+        this.maker = maker;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
